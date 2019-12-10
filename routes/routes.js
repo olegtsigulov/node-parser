@@ -1,18 +1,10 @@
-const { processor } = require( '../processor' );
-
+const { voteController } = require( '../controllers' );
 const express = require( 'express' );
-
 const routes = express.Router();
 
-routes.use( '/waivio-parser', routes );
+routes.use( '/waivio-node-parser', routes );
 
-// routes.route( '/parse-from-start' )
-//     .post( processor.parseAllBlockChain );
-// routes.route( '/run-stream' )
-//     .post( processor.runStream );
-// routes.route( '/get-current-block' )
-//     .post( processor.getCurrentBlock );
-// routes.route( '/restore-redis' )
-//     .get( processor.restoreRedis );
+routes.route( '/addPostVote' ).post( voteController.addPostVote );
+routes.route( '/addFieldVote' ).post( voteController.addFieldVote );
 
 module.exports = routes;

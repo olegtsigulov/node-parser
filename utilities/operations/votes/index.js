@@ -1,0 +1,1 @@
+exports.addPostVote = require( './addPostVote' );
