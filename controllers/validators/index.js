@@ -1,5 +1,5 @@
 module.exports = {
-    voteSchemas: require( './wobjectValidator' ),
+    voteSchemas: require( './vote.validator' ),
     validate: ( data, schema, next ) => {
         const result = schema.validate( data );
         if( result.error ) {

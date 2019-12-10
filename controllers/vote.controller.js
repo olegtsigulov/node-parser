@@ -3,7 +3,7 @@ const { addPostVote, addFieldVote } = require( '../utilities/operations/votes' )
 const { authorise } = require( '../utilities/authorization/authoriseUser' );
 
 exports.addPostVote = async function ( req, res, next ) {
-    const value = validate( req.body, voteSchemas.addPostVote, next );
+    const value = validate( req.body, voteSchemas.addFieldPostVote, next );
     if( !value ) return;
 
     const { error: authError } = await authorise( value.voter );
@@ -17,7 +17,7 @@ exports.addPostVote = async function ( req, res, next ) {
 };
 
 exports.addFieldVote = async function ( req, res, next ) {
-    const value = validate( req.body, voteSchemas.addFieldVote, next );
+    const value = validate( req.body, voteSchemas.addFieldPostVote, next );
     if( !value ) return;
 
     const { error: authError } = await authorise( value.voter );

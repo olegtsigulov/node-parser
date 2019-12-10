@@ -10,11 +10,11 @@ const waivioAuthorise = require( './waivioAuth/authorise' );
 exports.authorise = async ( username ) => {
     const session = getNamespace( 'request-session' );
     const accessToken = session.get( 'access-token' );
-    const isWaivioAuth = session.get( 'waivio-auth' );
+    const isWaivioAuth = session.get( 'isWaivioAuth' );
     let isValidToken;
 
     if( isWaivioAuth ) {
-        isValidToken = await waivioAuthorise.authorise( username, accessToken );
+        isValidToken = await waivioAuthorise.authorise( accessToken, username );
     }
 
     return isValidToken ? { isValid: true } : { error: { status: 401, message: 'Token not valid!' } };
