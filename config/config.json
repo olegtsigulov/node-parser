@@ -8,6 +8,11 @@
     "redis": {
       "wobjectsRefs": 1,
       "lastBlock": 2
+    },
+    "waivio_auth": {
+      "host": "www.waivio.com",
+      "baseUrl": "auth",
+      "validateTokenPath": "validate_token"
     }
   },
   "staging": {
@@ -19,6 +24,11 @@
     "redis": {
       "wobjectsRefs": 1,
       "lastBlock": 2
+    },
+    "waivio_auth": {
+      "host": "waiviodev.com",
+      "baseUrl": "auth",
+      "validateTokenPath": "validate_token"
     }
   },
   "development": {
@@ -30,6 +40,11 @@
     "redis": {
       "wobjectsRefs": 1,
       "lastBlock": 2
+    },
+    "waivio_auth": {
+      "host": "waiviodev.com",
+      "baseUrl": "auth",
+      "validateTokenPath": "validate_token"
     }
   },
   "test": {
@@ -41,6 +56,11 @@
     "redis": {
       "wobjectsRefs": 6,
       "lastBlock": 7
+    },
+    "waivio_auth": {
+      "host": "waiviotest.com",
+      "baseUrl": "auth",
+      "validateTokenPath": "validate_token"
     }
   }
 }
