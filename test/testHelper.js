@@ -16,13 +16,17 @@ const { postsUtil } = require( '../utilities/steemApi' );
 const { importTags, importUpdates } = require( '../utilities/objectImportServiceApi' );
 const { ObjectType, WObject, Post, User, UserWobjects, App, CommentRef } = require( '../database' ).models;
 const { Wobj: WobjModel, App: AppModel, ObjectType: ObjectTypeModel, Post: PostModel, User: UserModel } = require( '../models' );
+
 const sinon = require( 'sinon' );
 const chai = require( 'chai' );
 const sinonChai = require( 'sinon-chai' );
+const chaiHttp = require( 'chai-http' );
 const chaiAsPromised = require( 'chai-as-promised' );
 chai.use( sinonChai );
 chai.use( chaiAsPromised );
+chai.use( chaiHttp );
 const expect = chai.expect;
+
 const { Mongoose } = require( '../database' );
 const { redis, redisGetter, redisSetter } = require( '../utilities/redis' );
 const { commentRefGetter, commentRefSetter } = require( '../utilities/commentRefService' );

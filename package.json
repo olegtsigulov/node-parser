@@ -21,6 +21,7 @@
     "bluebird": "^3.5.3",
     "body-parser": "^1.15.2",
     "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.3.0",
     "cls-hooked": "^4.2.2",
     "cron": "^1.7.2",
     "dsteem": "^0.8.7",

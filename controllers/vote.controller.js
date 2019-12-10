@@ -1,5 +1,5 @@
 const { validate, voteSchemas } = require( './validators' );
-const { addPostVote, addFieldVote } = require( '../utilities/operations/votes' );
+const votesOperations = require( '../utilities/restOperations/votes' );
 const { authorise } = require( '../utilities/authorization/authoriseUser' );
 
 exports.addPostVote = async function ( req, res, next ) {
@@ -9,7 +9,7 @@ exports.addPostVote = async function ( req, res, next ) {
     const { error: authError } = await authorise( value.voter );
     if( authError ) return next( authError );
 
-    const { result, error } = await addPostVote( value );
+    const { result, error } = await votesOperations.addPostVote( value );
     if ( error ) return next( error );
 
     res.result = { status: 200, json: { result } };
@@ -23,7 +23,7 @@ exports.addFieldVote = async function ( req, res, next ) {
     const { error: authError } = await authorise( value.voter );
     if( authError ) return next( authError );
 
-    const { result, error } = await addFieldVote( value );
+    const { result, error } = await votesOperations.addFieldVote( value );
     if ( error ) return next( error );
 
     res.result = { status: 200, json: { result } };
